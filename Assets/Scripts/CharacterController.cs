@@ -5,6 +5,7 @@ public class Character_controller : MonoBehaviour
 {
     
     float movementSpeed = 3f;
+    float jumpForce = 3f;
     InputAction _moveAction;
     InputAction _jumpAction;
     Vector2 _moveDirection;
@@ -17,6 +18,7 @@ public class Character_controller : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         _moveAction = InputSystem.actions ["Move"];
+        _jumpAction = InputSystem.actions ["Jump"];
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class Character_controller : MonoBehaviour
 
         if (_moveDirection.x > 0)
         {
-            SpriteRenderer.flipX = false;
+            SpriteRenderer.flipX = false; 
         }
         else if (_moveDirection.x < 0)
         {
